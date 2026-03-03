@@ -27,28 +27,7 @@ Ollama is an open-source tool that lets you **run large language models (LLMs) l
 
 Ollama uses a **client-server architecture**. When you run any `ollama` command, a client communicates with the Ollama server over HTTP.
 
-```
-┌─────────────────────────────────────────────────────┐
-│                    Your Machine                      │
-│                                                      │
-│  ┌──────────┐      HTTP :11434      ┌─────────────┐ │
-│  │ Ollama   │ ──────────────────▶  │   Ollama     │ │
-│  │ CLI      │                       │   Server     │ │
-│  └──────────┘                       │              │ │
-│                                     │  ┌─────────┐ │ │
-│  ┌──────────┐                       │  │ Model   │ │ │
-│  │ Your App │ ──────────────────▶  │  │ Runner  │ │ │
-│  │ (curl,   │      HTTP :11434      │  └────┬────┘ │ │
-│  │  Python, │                       │       │      │ │
-│  │  JS)     │                       │  ┌────▼────┐ │ │
-│  └──────────┘                       │  │ GPU /   │ │ │
-│                                     │  │ CPU     │ │ │
-│                                     │  └─────────┘ │ │
-│                                     └─────────────┘ │
-│                                                      │
-│  ~/.ollama/models/   ◄── Model storage               │
-└─────────────────────────────────────────────────────┘
-```
+![Architecture Overview](../diagrams/architecture-overview.png)
 
 ### How It Works (Step by Step)
 
